@@ -28,3 +28,30 @@ func GetPatientRoom(db *gorm.DB, name string) (*[]models.Hospital, error) {
 	}
 	return &patient, nil
 }
+
+func GetPatientByID(db *gorm.DB, id string) (*models.Hospital, error) {
+	p := models.Hospital{}
+	err := db.Select("patient.*").Group("patient.patient_id").Where("patient.patient_id = ?", id).First(&p).Error
+
+	if err != nil {
+		return nil, err
+	}
+	return &p, nil
+}
+
+func DeletePatientByID(db *gorm.DB, id string) error {
+	var p models.Hospital
+	err := db.Where("patient.patient_id = ?", id).Delete(&p).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func SavePatient(db *gorm.DB, p *models.Hospital) error {
+	err := db.Save(p).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
