@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/Ansh5461/HospitalManagement/models"
-
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 var DB *gorm.DB
@@ -16,7 +16,7 @@ func Setup() {
 	dbName := "hospital"
 	username := "postgres"
 	password := "postgres"
-	args := "host=" + host + " port=" + port + " dbName=" + dbName + "username=" + username + " sslmode=disable password=" + password
+	args := "host=" + host + " port=" + port + " user=" + username + " dbname=" + dbName + " sslmode=disable password=" + password
 	db, err := gorm.Open("postgres", args)
 	if err != nil {
 		log.Fatal(err)
