@@ -7,10 +7,11 @@ import (
 )
 
 func SetupRouter(router *gin.Engine, api handler.Handler) {
+
 	router.GET("/hospital", api.GetPatient)
 	router.POST("/hospital", api.SavePatient)
 	router.GET("/hospital/:patient_id", api.DeletePatientByID)
-	router.GET("/hospital/:patient_name", api.GetPatientRoom)
+	//router.GET("/hospital/:patient_name", api.GetPatientRoom)
 	router.DELETE("/hospital/:patient_id", api.DeletePatientByID)
 
 }
