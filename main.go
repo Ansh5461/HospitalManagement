@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/Ansh5461/HospitalManagement/database"
-	//	"github.com/Ansh5461/HospitalManagement/handler"
+	//"github.com/Ansh5461/HospitalManagement/handler"
 	"github.com/Ansh5461/HospitalManagement/router"
 )
 
@@ -16,12 +16,4 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	//	api := handler.Handler{
-	//		DB: database.GetDB(), //set the handler DB
-	//	} //get the customized engine
-
-	//router.SetupRouter(engine, api)
-	//err := engine.Run("127.0.0.1:8080")
-
 }
