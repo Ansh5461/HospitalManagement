@@ -2,7 +2,7 @@ package database
 
 import (
 	"github.com/Ansh5461/HospitalManagement/models"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 func GetPatient(db *gorm.DB) ([]models.Hospital, error) {

@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 type Handler struct {
